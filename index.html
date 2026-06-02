@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EEB Professora Claurinice Vieira Caldeira — 70 anos de história, memória e pertencimento.">
+<meta property="og:title" content="CVC 70 Anos">
+<meta property="og:description" content="Compartilhe sua memória com a escola. Use a #criacvc.">
+<title>CVC 70 Anos</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --vinho: #5C1010;
+  --vinho-md: #7B1C1C;
+  --dourado: #C8A882;
+  --dourado-light: #E8D5B8;
+  --creme: #FAF7F2;
+  --creme-dark: #F0EAE0;
+  --texto: #2C1810;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--vinho);
+  font-family: 'Cormorant Garamond', serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 60px 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Textura de pontos */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page {
+  width: 100%;
+  max-width: 480px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── HEADER ── */
+.header {
+  text-align: center;
+  padding: 52px 0 32px;
+  position: relative;
+}
+
+.ornament-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.ornament-top .line {
+  flex: 1;
+  height: 1px;
+  background: var(--dourado);
+  opacity: 0.38;
+}
+
+.diamond {
+  width: 10px;
+  height: 10px;
+  background: var(--dourado);
+  transform: rotate(45deg);
+  opacity: 0.75;
+  flex-shrink: 0;
+}
+
+.logo-placeholder {
+  width: 148px;
+  height: 148px;
+  margin: 0 auto 28px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(200,168,130,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.04);
+  position: relative;
+}
+
+.logo-placeholder img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+  display: none;
+}
+
+.logo-placeholder .logo-text {
+  text-align: center;
+  color: var(--dourado);
+  opacity: 0.45;
+  font-size: 13px;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.logo-placeholder .logo-cvc {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--dourado);
+  opacity: 0.6;
+  display: block;
+  letter-spacing: 4px;
+}
+
+.school-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--dourado);
+  letter-spacing: 4px;
+  opacity: 0.65;
+  text-transform: uppercase;
+  line-height: 1.8;
+}
+
+.years {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin: 10px 0 4px;
+}
+
+.years span {
+  color: var(--dourado);
+  font-size: 28px;
+  font-weight: 300;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 10px;
+  display: block;
+  margin-top: 4px;
+}
+
+.tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  font-style: italic;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+/* ── DIVISOR ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 28px 0;
+}
+.divider .line {
+  flex: 1;
+  height: 1px;
+  background: var(--dourado);
+  opacity: 0.28;
+}
+.divider .diamond {
+  width: 8px;
+  height: 8px;
+}
+
+/* ── LINKS ── */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.link-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.link-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.link-btn:hover::before { opacity: 1; }
+.link-btn:hover { transform: translateY(-2px); }
+.link-btn:active { transform: translateY(0); }
+
+/* Variante principal — creme */
+.link-btn.primary {
+  background: var(--creme);
+  border: 1px solid rgba(200,168,130,0.2);
+}
+.link-btn.primary::before {
+  background: rgba(200,168,130,0.12);
+}
+.link-btn.primary .btn-icon {
+  color: var(--vinho);
+}
+.link-btn.primary .btn-title {
+  color: var(--texto);
+}
+.link-btn.primary .btn-sub {
+  color: rgba(44,24,16,0.52);
+}
+.link-btn.primary .arrow {
+  color: rgba(44,24,16,0.3);
+}
+
+/* Variante dourada */
+.link-btn.gold {
+  background: transparent;
+  border: 1px solid rgba(200,168,130,0.5);
+}
+.link-btn.gold::before {
+  background: rgba(200,168,130,0.08);
+}
+.link-btn.gold .btn-icon { color: var(--dourado); }
+.link-btn.gold .btn-title { color: var(--creme); }
+.link-btn.gold .btn-sub { color: rgba(250,247,242,0.45); }
+.link-btn.gold .arrow { color: rgba(200,168,130,0.4); }
+
+/* Variante em breve */
+.link-btn.soon {
+  background: transparent;
+  border: 1px solid rgba(200,168,130,0.2);
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
+}
+.link-btn.soon .btn-title { color: rgba(250,247,242,0.6); }
+.link-btn.soon .btn-sub { color: rgba(250,247,242,0.35); }
+.link-btn.soon .arrow { display: none; }
+
+.btn-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+}
+
+.btn-content {
+  flex: 1;
+}
+
+.btn-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  display: block;
+}
+
+.btn-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 2px;
+  display: block;
+  line-height: 1.3;
+}
+
+.badge {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  padding: 3px 8px;
+  border-radius: 2px;
+  background: var(--vinho-md);
+  color: var(--dourado);
+  border: 1px solid rgba(200,168,130,0.35);
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.arrow {
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.link-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ── SEÇÃO HASHTAG ── */
+.hashtag-section {
+  margin-top: 36px;
+  text-align: center;
+  padding: 28px 24px;
+  border: 1px solid rgba(200,168,130,0.25);
+  border-radius: 3px;
+  background: rgba(255,255,255,0.03);
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.hashtag-section p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: rgba(250,247,242,0.55);
+  font-style: italic;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.hashtag {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
+.hashtag span {
+  color: var(--dourado);
+}
+
+/* ── FOOTER ── */
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  animation: fadeUp 0.8s 0.5s ease both;
+}
+
+.footer p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  color: rgba(200,168,130,0.35);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1.8;
+}
+
+/* ── BORDAS DECORATIVAS LATERAIS ── */
+.side-border-left,
+.side-border-right {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(200,168,130,0.2) 20%,
+    rgba(200,168,130,0.2) 80%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+.side-border-left  { left: 20px; }
+.side-border-right { right: 20px; }
+
+@media (max-width: 400px) {
+  .side-border-left, .side-border-right { display: none; }
+  .years { font-size: 44px; }
+}
+</style>
+</head>
+<body>
+
+<div class="side-border-left"></div>
+<div class="side-border-right"></div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="ornament-top">
+      <div class="line"></div>
+      <div class="diamond"></div>
+      <div class="line"></div>
+    </div>
+
+    <!-- Logo: substitua o src pela URL do logo após subir no repositório -->
+    <div class="logo-placeholder" id="logoWrap">
+      <img src="Logo_70_anos.png" alt="Logo CVC 70 Anos" id="logoImg"
+           onload="this.style.display='block'; document.querySelector('.logo-text').style.display='none';">
+      <div class="logo-text">
+        <span class="logo-cvc">C.V.C</span>
+        70 anos
+      </div>
+    </div>
+
+    <p class="school-name">EEB Professora<br>Claurinice Vieira Caldeira</p>
+    <div class="years">70<span>ANOS</span></div>
+    <p class="tagline">Acolher histórias para transformar o futuro.</p>
+  </header>
+
+  <div class="divider">
+    <div class="line"></div>
+    <div class="diamond"></div>
+    <div class="line"></div>
+  </div>
+
+  <!-- LINKS -->
+  <nav class="links" aria-label="Links do projeto">
+
+    <!-- Formulário de Memórias -->
+    <a href="COLE_AQUI_O_LINK_DO_GOOGLE_FORMS" class="link-btn primary" target="_blank" rel="noopener">
+      <span class="btn-icon">✍️</span>
+      <span class="btn-content">
+        <span class="btn-title">Envie sua memória</span>
+        <span class="btn-sub">Seu relato vai para o Livro de Memórias</span>
+      </span>
+      <span class="arrow">›</span>
+    </a>
+
+    <!-- Instagram #criacvc -->
+    <a href="https://instagram.com/COLOQUE_AQUI_O_@_DA_ESCOLA" class="link-btn primary" target="_blank" rel="noopener">
+      <span class="btn-icon">📸</span>
+      <span class="btn-content">
+        <span class="btn-title">Siga o CVC no Instagram</span>
+        <span class="btn-sub">Use a #criacvc e apareça nas nossas mídias</span>
+      </span>
+      <span class="arrow">›</span>
+    </a>
+
+    <!-- Sobre o Projeto -->
+    <a href="COLE_AQUI_LINK_DO_PROJETO_OU_REMOVA" class="link-btn gold" target="_blank" rel="noopener">
+      <span class="btn-icon">📖</span>
+      <span class="btn-content">
+        <span class="btn-title">Conheça o Projeto 70 Anos</span>
+        <span class="btn-sub">A história, os objetivos e como participar</span>
+      </span>
+      <span class="arrow">›</span>
+    </a>
+
+    <!-- Noite das Gerações — em breve -->
+    <div class="link-btn soon">
+      <span class="btn-icon">🎉</span>
+      <span class="btn-content">
+        <span class="btn-title">Noite das Gerações CVC</span>
+        <span class="btn-sub">Novembro 2026 — em breve</span>
+      </span>
+      <span class="badge">Em breve</span>
+    </div>
+
+  </nav>
+
+  <!-- HASHTAG -->
+  <div class="hashtag-section">
+    <p>Compartilhe sua foto e faça parte<br>da nossa história.</p>
+    <div class="hashtag">#cria<span>cvc</span></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>São Francisco do Sul · SC<br>1956 — 2026</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
