@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A história da EEB Professora Claurinice Vieira Caldeira — 70 anos de educação em São Francisco do Sul.">
+<meta property="og:title" content="Nossa História — CVC 70 Anos">
+<meta property="og:description" content="Conheça a história da escola e da mulher que lhe deu nome.">
+<title>Nossa História — CVC 70 Anos</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --vinho: #5C1010;
+  --vinho-md: #7B1C1C;
+  --dourado: #C8A882;
+  --creme: #FAF7F2;
+  --creme-dark: #F0EAE0;
+  --texto: #2C1810;
+  --texto-suave: rgba(44,24,16,0.62);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--creme);
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--texto);
+  overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--vinho);
+  padding: 64px 24px 52px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.ornament .line { flex:1; height:1px; background:var(--dourado); opacity:.35; }
+.diamond { width:9px; height:9px; background:var(--dourado); transform:rotate(45deg); opacity:.7; flex-shrink:0; }
+
+.hero-logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 24px;
+  object-fit: contain;
+}
+
+.hero-logo-placeholder {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,168,130,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-logo-placeholder span {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dourado);
+  letter-spacing: 3px;
+  opacity: .7;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--dourado);
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  opacity: .7;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 8vw, 62px);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero h2 span { color: var(--dourado); }
+
+.hero p {
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ── FAIXA DATA ── */
+.data-faixa {
+  background: var(--dourado);
+  padding: 14px 24px;
+  text-align: center;
+}
+.data-faixa p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--vinho);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* ── CONTAINERS ── */
+.section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.section-sm {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+/* ── BLOCO PATRONESSE ── */
+.patronesse {
+  background: var(--vinho);
+  padding: 64px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.patronesse::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.patronesse-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-tag {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.section-tag.light { color: var(--dourado); opacity: .65; }
+.section-tag.dark  { color: var(--vinho); opacity: .5; }
+.section-tag::after { content:''; flex:1; height:1px; background:currentColor; opacity:.3; }
+
+h3.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+
+h3.section-title.light { color: #FFFFFF; }
+h3.section-title.dark  { color: var(--vinho); }
+
+.prose {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+.prose.light { color: rgba(255,255,255,0.78); }
+.prose.dark  { color: var(--texto-suave); }
+
+.prose p + p { margin-top: 20px; }
+
+.prose em {
+  color: var(--dourado);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.prose.dark em { color: var(--vinho); font-weight: 600; }
+
+.quote-block {
+  border-left: 2px solid var(--dourado);
+  padding: 16px 24px;
+  margin: 32px 0;
+  background: rgba(200,168,130,0.08);
+}
+
+.quote-block p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.7;
+}
+
+.quote-block.dark {
+  border-left-color: var(--vinho);
+  background: rgba(92,16,16,0.06);
+}
+
+.quote-block.dark p { color: var(--texto); }
+
+/* ── FOTO PRINCIPAL ── */
+.foto-principal {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  filter: sepia(8%) contrast(1.05);
+}
+
+.foto-caption {
+  background: var(--vinho);
+  padding: 12px 24px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--dourado);
+  opacity: .75;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* ── GALERIA HISTÓRICA ── */
+.galeria {
+  background: var(--creme-dark);
+  padding: 52px 24px;
+}
+
+.galeria-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.galeria-item img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  filter: sepia(20%) contrast(1.05) brightness(0.95);
+  transition: filter 0.3s ease;
+}
+
+.galeria-item img:hover { filter: sepia(0%) contrast(1.05); }
+
+.galeria-item p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--texto-suave);
+  margin-top: 6px;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .galeria-grid { grid-template-columns: 1fr; }
+}
+
+/* ── LINHA DO TEMPO ── */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+  margin-top: 36px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--vinho) 0%, rgba(92,16,16,0.15) 100%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: var(--vinho);
+  transform: rotate(45deg);
+}
+
+.timeline-item .ano {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--vinho);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.timeline-item .desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--texto-suave);
+  line-height: 1.6;
+}
+
+/* ── DESTAQUE GINÁSIO ── */
+.destaque {
+  background: var(--vinho);
+  border-left: 4px solid var(--dourado);
+  padding: 24px 28px;
+  margin: 36px 0;
+}
+
+.destaque p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.7;
+}
+
+.destaque strong {
+  color: var(--dourado);
+  font-weight: 600;
+}
+
+/* ── CTA LIVRO ── */
+.cta-livro {
+  background: var(--vinho);
+  padding: 72px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-livro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-livro h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 6vw, 46px);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.cta-livro h3 span { color: var(--dourado); }
+
+.cta-livro p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.68);
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 36px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  width: 100%;
+  max-width: 420px;
+  justify-content: center;
+}
+
+.btn-cta.primary {
+  background: var(--creme);
+  color: var(--vinho);
+}
+
+.btn-cta.primary:hover {
+  background: var(--dourado);
+  color: var(--vinho);
+}
+
+.btn-cta.outline {
+  background: transparent;
+  color: var(--creme);
+  border: 1px solid rgba(250,247,242,0.35);
+}
+
+.btn-cta.outline:hover {
+  border-color: var(--dourado);
+  color: var(--dourado);
+}
+
+/* ── FOOTER ── */
+.footer-page {
+  background: var(--creme-dark);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.footer-page a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--vinho);
+  text-decoration: none;
+  opacity: .6;
+  letter-spacing: 2px;
+  transition: opacity 0.2s;
+}
+
+.footer-page a:hover { opacity: 1; }
+
+.footer-page p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  color: var(--texto-suave);
+  margin-top: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: .5;
+}
+
+/* ── ANIMAÇÃO ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.hero-inner { animation: fadeUp 0.9s ease both; }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════
+     HERO
+════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="ornament">
+      <div class="line"></div>
+      <div class="diamond"></div>
+      <div class="line"></div>
+    </div>
+
+    <!-- Substitua pela tag <img> com o logo após subir no GitHub -->
+    <div class="hero-logo-placeholder">
+      <span>C.V.C</span>
+    </div>
+
+    <h1>EEB Professora Claurinice Vieira Caldeira</h1>
+    <h2>Nossa <span>História</span></h2>
+    <p>Sete décadas de educação, memória e pertencimento<br>em São Francisco do Sul.</p>
+
+    <div class="ornament" style="margin-top:36px; margin-bottom:0;">
+      <div class="line"></div>
+      <div class="diamond"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     FAIXA DATA
+════════════════════════════════════ -->
+<div class="data-faixa">
+  <p>Fundada em 16 de fevereiro de 1956 · São Francisco do Sul · Santa Catarina</p>
+</div>
+
+<!-- ════════════════════════════════════
+     FOTO PRINCIPAL — fachada atual
+════════════════════════════════════ -->
+<img src="fachada_atual_frente.jpg"
+     alt="Fachada atual da EEB Professora Claurinice Vieira Caldeira"
+     class="foto-principal">
+<div class="foto-caption">Fachada atual da escola — São Francisco do Sul, SC</div>
+
+<!-- ════════════════════════════════════
+     BLOCO PATRONESSE
+════════════════════════════════════ -->
+<section class="patronesse">
+  <div class="patronesse-inner">
+    <div class="section-tag light">A mulher que nos deu nome</div>
+    <h3 class="section-title light">Claurinice Vieira Caldeira<br><em style="font-size:0.65em; color:rgba(255,255,255,0.5); font-weight:300;">1925 — 1955</em></h3>
+
+    <div class="quote-block">
+      <p>Uma intelectual que dedicou sua curta vida aos estudos e à caridade ao próximo — e cuja memória ilumina esta escola há 70 anos.</p>
+    </div>
+
+    <div class="prose light">
+      <p>
+        Claurinice Vieira Caldeira nasceu em 1925 e desde a infância foi
+        <em>aluna de destaque</em>, conquistando reiteradamente os primeiros lugares
+        e recebendo, por diversas vezes, a honra ao mérito.
+      </p>
+      <p>
+        Intelectual e generosa, lecionou gratuitamente preparando alunos para
+        exames de admissão. Atuou, também sem remuneração, na Biblioteca Municipal
+        de São Francisco do Sul, onde exerceu a função de bibliotecária com
+        <em>zelo e dedicação</em>. Como jornalista, publicou diversos artigos em jornais locais.
+      </p>
+      <p>
+        Falecida precocemente em 1955, aos 30 anos, foi reconhecida como
+        destaque da sociedade francisquense. Em sua homenagem, a escola que
+        abriria suas portas no ano seguinte recebeu seu nome — e assim ela
+        continua presente, <em>viva em cada aluno que por aqui passa.</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     HISTÓRIA DA ESCOLA
+════════════════════════════════════ -->
+<section class="section">
+  <div class="section-tag dark">A trajetória da escola</div>
+  <h3 class="section-title dark">70 anos que<br>construíram gerações</h3>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="ano">1956</div>
+      <div class="desc">A escola abre suas portas como <strong>Grupo Escolar</strong> em 16 de fevereiro, oferecendo ensino da 1ª à 4ª série. Um novo espaço de formação nasce em São Francisco do Sul.</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="ano">1983 – 1985</div>
+      <div class="desc">Transformada em <strong>Escola Básica</strong>, com autorização pelo Decreto nº 576/1974, passa a oferecer ensino da 1ª à 8ª série. Um novo prédio — maior, mais moderno — é construído e inaugurado oficialmente em 1985, com biblioteca, quadra de esportes e mais salas de aula.</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="ano">1988</div>
+      <div class="desc">A escola torna-se <strong>Colégio Estadual</strong> pela Portaria nº 127/1988, passando a oferecer Ensino Médio profissionalizante — habilitação em Auxiliar de Escritório — e funcionamento no período noturno.</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="ano">1999</div>
+      <div class="desc">Reforma parcial com <strong>ampliação da biblioteca</strong>, que segue crescendo junto com a comunidade escolar.</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="ano">2005</div>
+      <div class="desc">Reinauguração após grande reforma e ampliação. A escola passa a contar com mais quatro salas de aula, novos pátios cobertos, banheiro adaptado e área total de <strong>1.885,70 m²</strong>.</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="ano">2022</div>
+      <div class="desc">A biblioteca é revitalizada e reinaugurada com o nome de <strong>Biblioteca Sandra Maria dos Santos</strong>, fruto de um processo iniciado em 2021 com a participação de alunos voluntários do Ensino Médio.</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="ano">2025</div>
+      <div class="desc">Em 11 de agosto de 2025, é inaugurado o <strong>Ginásio de Esportes</strong> — o único ginásio vinculado a uma escola pública em São Francisco do Sul. Um investimento de mais de R$ 3,6 milhões que beneficia aproximadamente 665 estudantes.</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="ano">2026</div>
+      <div class="desc"><strong>70 anos de história.</strong> E muitas ainda por escrever.</div>
+    </div>
+
+  </div>
+
+  <div class="destaque">
+    <p>
+      O ginásio de esportes, inaugurado em 2024, é <strong>o único vinculado a uma escola pública em São Francisco do Sul</strong>.
+      Com arquibancadas, vestiários, enfermaria, sala de jogos e academia,
+      representa mais de R$ 3,6 milhões investidos na comunidade escolar —
+      e uma conquista aguardada desde 2010.
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     GALERIA HISTÓRICA
+════════════════════════════════════ -->
+<div class="galeria">
+  <div class="galeria-inner">
+    <div class="section-tag dark">Memória em imagens</div>
+    <h3 class="section-title dark" style="margin-bottom:8px;">A escola<br>que o tempo guardou</h3>
+    <p class="prose dark" style="margin-bottom:0;">Registros históricos da EEB Professora Claurinice Vieira Caldeira.</p>
+
+    <div class="galeria-grid">
+      <div class="galeria-item">
+        <img src="fachada_0001.jpg" alt="Fachada histórica da escola">
+        <p>Fachada — acervo histórico</p>
+      </div>
+      <div class="galeria-item">
+        <img src="fachada_0007.jpg" alt="Vista histórica da escola">
+        <p>Vista lateral — acervo histórico</p>
+      </div>
+      <div class="galeria-item">
+        <img src="fachada_atual_lateral.jpg" alt="Fachada atual da escola">
+        <p>Fachada atual — 2026</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     CTA — GANCHO LIVRO DE MEMÓRIAS
+════════════════════════════════════ -->
+<section class="cta-livro">
+  <div class="cta-inner">
+
+    <div class="ornament" style="margin-bottom:36px;">
+      <div class="line"></div>
+      <div class="diamond"></div>
+      <div class="line"></div>
+    </div>
+
+    <h3>Essa história também<br>é <span>sua.</span></h3>
+
+    <p>
+      Setenta anos não se constroem sozinhos.<br>
+      Cada aluno, cada professor, cada família que passou
+      por esta escola deixou uma marca.<br>
+      E essas marcas merecem ser guardadas para sempre.
+    </p>
+
+    <div class="quote-block" style="text-align:left; margin-bottom:36px;">
+      <p>
+        "Estamos construindo o Livro de Memórias da CVC —
+        uma obra escrita por muitas mãos. Queremos a sua história dentro dele."
+      </p>
+    </div>
+
+    <div class="btn-group">
+      <a href="https://forms.gle/STF4UoJXidhzD35a9"
+         class="btn-cta primary"
+         target="_blank" rel="noopener">
+        ✍️ &nbsp;Envie sua memória
+      </a>
+      <a href="https://instagram.com/eebclaurinice"
+         class="btn-cta outline"
+         target="_blank" rel="noopener">
+        📸 &nbsp;Compartilhe com #criacvc
+      </a>
+    </div>
+
+    <div class="ornament" style="margin-top:48px; margin-bottom:0;">
+      <div class="line"></div>
+      <div class="diamond"></div>
+      <div class="line"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<footer class="footer-page">
+  <a href="index.html">← Voltar para a página principal</a>
+  <p>EEB Professora Claurinice Vieira Caldeira · São Francisco do Sul · SC · 1956–2026</p>
+</footer>
+
+</body>
+</html>
