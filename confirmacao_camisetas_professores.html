@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camiseta 70 anos — Confira seu pedido</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@500;600&display=swap');
+
+  :root {
+    --bordeaux: #5C1010;
+    --bordeaux-dark: #3D0A0A;
+    --gold: #C8A882;
+    --gold-soft: #EFE6D8;
+    --cream: #FAF7F2;
+    --ink: #2A2320;
+    --ink-soft: #6B5D53;
+    --confirm: #4A7856;
+    --confirm-soft: #E4EDE6;
+    --warn: #B8863B;
+    --warn-soft: #F5EBDA;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    background: var(--bordeaux);
+    color: var(--gold-soft);
+    padding: 2.2rem 1.5rem 2rem;
+    text-align: center;
+    position: relative;
+    border-bottom: 3px solid var(--gold);
+  }
+
+  header .seal {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 0.9rem;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 5vw, 2.1rem);
+    margin: 0 0 0.6rem;
+    color: #fff;
+  }
+
+  header p {
+    max-width: 480px;
+    margin: 0 auto;
+    color: var(--gold-soft);
+    font-size: 1.15rem;
+    opacity: 0.92;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 1.5rem 1.2rem 3rem;
+  }
+
+  .search-box {
+    position: sticky;
+    top: 0;
+    background: var(--cream);
+    padding: 1rem 0 0.8rem;
+    z-index: 5;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid var(--gold);
+    border-radius: 8px;
+    background: #fff;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--ink);
+  }
+  .search-box input:focus {
+    outline: none;
+    border-color: var(--bordeaux);
+  }
+
+  .progress-shell {
+    margin: 0.4rem 0 1.6rem;
+  }
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+    font-family: Georgia, serif;
+  }
+  .progress-track {
+    height: 7px;
+    background: var(--gold-soft);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--bordeaux);
+    border-radius: 4px;
+    transition: width 0.4s ease;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid #E8E0D5;
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    padding: 1.1rem 1.2rem;
+    margin-bottom: 0.9rem;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+  .card.is-confirmed { border-left-color: var(--confirm); }
+  .card.is-flagged { border-left-color: var(--warn); }
+
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    margin: 0 0 0.3rem;
+    color: var(--bordeaux);
+    padding-right: 90px;
+  }
+
+  .meta {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    margin: 0 0 0.2rem;
+  }
+  .meta .missing { color: var(--warn); font-weight: 600; }
+  .meta-custom {
+    font-size: 0.98rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: 0.1rem 0 0;
+  }
+
+  .badge {
+    position: absolute;
+    top: 1.1rem;
+    right: 1.2rem;
+    font-family: Georgia, serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    padding: 4px 9px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+  .badge.confirmed { background: var(--confirm-soft); color: var(--confirm); }
+  .badge.flagged { background: var(--warn-soft); color: var(--warn); }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.7rem;
+  }
+
+  .btn-confirm {
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    background: var(--bordeaux);
+    color: #fff;
+    border: none;
+    padding: 0.55rem 1.1rem;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  .btn-confirm:hover { background: var(--bordeaux-dark); }
+  .btn-confirm:disabled { opacity: 0.6; cursor: default; }
+
+  .link-btn {
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .status-line {
+    font-family: Georgia, serif;
+    font-size: 0.92rem;
+    color: var(--confirm);
+    margin-top: 0.5rem;
+  }
+  .status-line.flag { color: var(--warn); }
+
+  .correction-box {
+    margin-top: 0.8rem;
+    display: none;
+  }
+  .correction-box.open { display: block; }
+  .correction-box textarea {
+    width: 100%;
+    min-height: 60px;
+    border: 1.5px solid var(--gold);
+    border-radius: 6px;
+    padding: 0.5rem 0.7rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    resize: vertical;
+  }
+  .correction-box .row {
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 0.5rem;
+  }
+
+  .empty-state, .load-state {
+    text-align: center;
+    color: var(--ink-soft);
+    padding: 2rem 1rem;
+    font-style: italic;
+  }
+  .load-state.error { color: var(--warn); font-style: normal; }
+  .retry-btn {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-family: Georgia, serif;
+    background: var(--bordeaux);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1.5rem 1.2rem 2.5rem;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    border-top: 1px solid var(--gold-soft);
+    margin-top: 1rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="seal">CVC</div>
+  <h1>Confira seu pedido</h1>
+  <p>Camiseta comemorativa dos 70 anos — dá uma olhadinha nos seus dados abaixo e confirma se está tudo certo. Pedidos até 10/08.</p>
+</header>
+
+<div class="wrap">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Buscar pelo seu nome…" autocomplete="off" disabled>
+  </div>
+
+  <div class="progress-shell" id="progressShell" style="display:none;">
+    <div class="progress-label">
+      <span id="progressText">carregando…</span>
+      <span id="progressPct"></span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  </div>
+
+  <div id="loadState" class="load-state">Carregando os pedidos da planilha…</div>
+  <div id="cardList"></div>
+  <div id="emptyState" class="empty-state" style="display:none;">Nenhum nome encontrado. Confira a grafia ou fale com a Profª Renata.</div>
+</div>
+
+<footer>
+  Encontrou algo errado que não deu pra corrigir por aqui? Chama a Profª Renata direto no grupo do WhatsApp.
+</footer>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxv4nOpYumjWYYL838Cx8tgsLNuXwuk5V5L1S20mYK2sqAPKJI4fqzB6EutnU7O5Z2Zew/exec";
+
+let PEDIDOS = [];
+let state = {};
+
+function fmtTime(value) {
+  const d = new Date(value);
+  if (isNaN(d.getTime())) return '';
+  return d.toLocaleDateString('pt-BR', {day:'2-digit', month:'2-digit'}) + ' às ' +
+         d.toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'});
+}
+
+async function loadData() {
+  const loadEl = document.getElementById('loadState');
+  try {
+    const res = await fetch(SCRIPT_URL, { method: 'GET' });
+    if (!res.ok) throw new Error('bad response');
+    const json = await res.json();
+    PEDIDOS = json.pedidos || [];
+    state = {};
+    const conf = json.confirmacoes || {};
+    Object.keys(conf).forEach(function(n) {
+      const c = conf[n];
+      if (c.status === 'confirmado') state[n] = { confirmed: true, ts: c.ts };
+      else if (c.status === 'correcao') state[n] = { flagged: true, ts: c.ts, note: c.note };
+    });
+    loadEl.style.display = 'none';
+    document.getElementById('searchInput').disabled = false;
+    document.getElementById('progressShell').style.display = 'block';
+    renderList('');
+  } catch (e) {
+    loadEl.className = 'load-state error';
+    loadEl.innerHTML = 'Não consegui carregar os dados da planilha agora. <br><button class="retry-btn" onclick="loadData()">Tentar de novo</button>';
+  }
+}
+
+function renderProgress() {
+  const total = PEDIDOS.length;
+  const confirmed = PEDIDOS.filter(p => state[p.n] && state[p.n].confirmed).length;
+  document.getElementById('progressText').textContent = confirmed + ' de ' + total + ' confirmados';
+  const pct = total ? Math.round((confirmed/total)*100) : 0;
+  document.getElementById('progressPct').textContent = pct + '%';
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+function cardHTML(p) {
+  const s = state[p.n] || {};
+  const tamanhoText = p.tamanho ? p.tamanho : '<span class="missing">a confirmar</span>';
+  const modeloText = p.modelo || '<span class="missing">a confirmar</span>';
+  let cls = '';
+  let badge = '';
+  if (s.confirmed) { cls = 'is-confirmed'; badge = '<span class="badge confirmed">Confirmado</span>'; }
+  else if (s.flagged) { cls = 'is-flagged'; badge = '<span class="badge flagged">Em ajuste</span>'; }
+
+  let statusLine = '';
+  if (s.confirmed) statusLine = '<p class="status-line">✓ Confirmado em ' + fmtTime(s.ts) + '</p>';
+  if (s.flagged) statusLine = '<p class="status-line flag">Correção enviada em ' + fmtTime(s.ts) + ': "' + (s.note||'') + '"</p>';
+
+  const showActions = !s.confirmed && !s.flagged;
+
+  return '<div class="card ' + cls + '" data-n="' + p.n + '">' +
+    badge +
+    '<h3>' + p.nome + '</h3>' +
+    '<p class="meta">Modelo: ' + modeloText + ' · Cor: ' + p.cor + ' · Tamanho: ' + tamanhoText + '</p>' +
+    (p.extra ? '<p class="meta-custom">Nome para personalização: ' + p.extra + '</p>' : '') +
+    statusLine +
+    (showActions ?
+      '<div class="actions">' +
+        '<button class="btn-confirm" onclick="handleConfirm(' + p.n + ')">Está certo ✓</button>' +
+        '<button class="link-btn" onclick="toggleCorrection(' + p.n + ')">Tem algo errado</button>' +
+      '</div>' +
+      '<div class="correction-box" id="corr-' + p.n + '">' +
+        '<textarea id="corrtext-' + p.n + '" placeholder="O que está errado? Ex: era tamanho M, não G"></textarea>' +
+        '<div class="row">' +
+          '<button class="btn-confirm" onclick="handleFlag(' + p.n + ')">Enviar correção</button>' +
+          '<button class="link-btn" onclick="toggleCorrection(' + p.n + ')">Cancelar</button>' +
+        '</div>' +
+      '</div>'
+    : '<button class="link-btn" onclick="handleUndo(' + p.n + ')">desfazer</button>') +
+  '</div>';
+}
+
+function renderList(filterText) {
+  const list = document.getElementById('cardList');
+  const empty = document.getElementById('emptyState');
+  const norm = (filterText||'').toLowerCase().trim();
+  const filtered = PEDIDOS.filter(p => p.nome.toLowerCase().includes(norm))
+    .sort((a,b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+
+  if (filtered.length === 0) {
+    list.innerHTML = '';
+    empty.style.display = 'block';
+  } else {
+    empty.style.display = 'none';
+    list.innerHTML = filtered.map(cardHTML).join('');
+  }
+  renderProgress();
+}
+
+async function postConfirmation(n, nome, status, note) {
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ n: n, nome: nome, status: status, note: note || '' })
+    });
+  } catch (e) {
+    // optimistic UI already applied; a later reload will resync from the sheet
+  }
+}
+
+function findPedido(n) {
+  return PEDIDOS.find(p => p.n == n);
+}
+
+async function handleConfirm(n) {
+  const p = findPedido(n);
+  state[n] = { confirmed: true, ts: new Date().toISOString() };
+  renderList(document.getElementById('searchInput').value);
+  await postConfirmation(n, p ? p.nome : '', 'confirmado', '');
+}
+
+async function handleUndo(n) {
+  const p = findPedido(n);
+  delete state[n];
+  renderList(document.getElementById('searchInput').value);
+  await postConfirmation(n, p ? p.nome : '', 'desfeito', '');
+}
+
+function toggleCorrection(n) {
+  const box = document.getElementById('corr-' + n);
+  box.classList.toggle('open');
+}
+
+async function handleFlag(n) {
+  const text = document.getElementById('corrtext-' + n).value.trim();
+  if (!text) { return; }
+  const p = findPedido(n);
+  state[n] = { flagged: true, note: text, ts: new Date().toISOString() };
+  renderList(document.getElementById('searchInput').value);
+  await postConfirmation(n, p ? p.nome : '', 'correcao', text);
+}
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  renderList(e.target.value);
+});
+
+loadData();
+</script>
+
+</body>
+</html>
